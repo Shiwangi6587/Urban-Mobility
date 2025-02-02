@@ -28,6 +28,7 @@ Delhi’s traffic congestion worsens delivery delays, impacting businesses and c
 Warehouses struggle with rising demand & inefficient route planning.
  Peak-hour gridlocks at key choke points slow down last-mile delivery.
 Urban Motion Intelligence
+
 ✅Delhi faces severe congestion, unpredictable public transit demand & accident hotspots.
 ✅ISBT terminals & Metro stations experience peak-hour overcrowding.
 ✅Accident-prone zones like ITO, Dhaula Kuan, and Outer Ring Road pose safety risks.
@@ -35,5 +36,6 @@ Urban Motion Intelligence
 
 
 
-TechStack : React js ,  Python , numpy , pandas , BlockChain , Tailwind CSS , SQL , Tensor Flow , Node
+TechStack : React js ,  Python , numpy , pandas , BlockChain , Tailwind CSS , SQL , Tensor Flow , Node , Web Scrapping 
+
 
