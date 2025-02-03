@@ -24,7 +24,6 @@ const stats = [
   { 
     title: 'Active Users', 
     value: '1,429', 
-    
     change: '+8%',
     icon: Users,
     color: 'from-indigo-500/20 to-indigo-600/20',
@@ -52,6 +51,7 @@ const routeOptions = [
   {
     id: 'eco',
     name: 'Eco-Friendly',
+    textcolor: 'black',
     icon: Leaf,
     description: 'Optimize for lowest carbon emissions',
     reduction: '45% less CO₂'
@@ -87,15 +87,15 @@ export default function Dashboard() {
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold gradient-text">Command Center</h1>
+        <h1 className="text-5xl font-extrabold text-gray-800 dark:text-blue-900 font-serif">Command Center</h1>
         <div className="flex items-center gap-3 px-4 py-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20">
           <Zap className="w-5 h-5 text-indigo-500" />
-          <span className="text-sm font-medium text-indigo-300">System Operating at 98% Efficiency</span>
+          <span className="text-sm font-medium text-indigo-500">System Operating at 98% Efficiency</span>
         </div>
       </div>
 
-      <div className="glass-card p-6 rounded-xl border border-indigo-500/10">
-        <h2 className="text-xl font-bold gradient-text mb-6">Route Planner</h2>
+      <div className="p-6 rounded-xl border-4 border-black-900/30 bg-cream-900/30 backdrop-blur-md">
+        <h2 className="text-3xl font-bold gradient-text mb-6">Route Planner</h2>
         <form onSubmit={handleRouteSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {routeOptions.map((option) => {
@@ -107,12 +107,12 @@ export default function Dashboard() {
                   onClick={() => setSelectedRoute(option.id)}
                 >
                   <div className="p-2 rounded-lg bg-gradient-to-br from-indigo-600/20 to-purple-500/20">
-                    <Icon className="w-5 h-5 text-indigo-00" />
+                    <Icon className="w-5 h-5 text-green-700" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-0">{option.name}</h3>
-                    <p className="text-sm text-gray-00 mt-1">{option.description}</p>
-                    <span className="text-xs font-medium text-indigo-600 mt-2 block">{option.reduction}</span>
+                    <h3 className="font-semibold text-gray-900">{option.name}</h3>
+                    <p className="text-sm text-gray-900 mt-1">{option.description}</p>
+                    <span className="text-xs font-medium text-indigo-900 mt-2 block">{option.reduction}</span>
                   </div>
                 </div>
               );
@@ -121,27 +121,27 @@ export default function Dashboard() {
           
           <div className="flex gap-4">
             <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-500 mb-2">Current Location</label>
+              <label className="block text-xl font-medium text-gray-900 mb-2">Current Location</label>
+              <input type="text" 
+  className="input-field gap-5 block w-full border-4 border-black rounded-md " 
+  value="Current Location"
+/>
+
               <div className="relative gap-6">
                 
-                <input
-                  type="text"
-                  className="input-field pl-20 gap-5"
-                  value="Current Location"
-                  disabled
-                />
+      
               </div>
             </div>
             <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-500 mb-2">Destination</label>
+              <label className="block text-xl font-medium text-gray-900 mb-2">Destination</label>
               <div className="relative">
-                <input
-                  type="text"
-                  className="input-field pl-10"
-                  placeholder="Enter destination"
+              <input type="text" 
+  className="input-field gap-5 block w-full border-4 border-black rounded-md " 
+  placeholder="Enter destination"
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
-                />
+/>
+                
               </div>
             </div>
             <button
@@ -182,8 +182,8 @@ export default function Dashboard() {
             <div key={stat.title} className="glass-card p-6 rounded-xl">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-400 font-medium">{stat.title}</p>
-                  <p className="text-2xl font-bold mt-1 text-gray-100">{stat.value}</p>
+                  <p className="text-sm text-gray-600 font-medium">{stat.title}</p>
+                  <p className="text-2xl font-bold mt-1 text-gray-600">{stat.value}</p>
                 </div>
                 <div className={`p-3 rounded-lg bg-gradient-to-br ${stat.color}`}>
                   <Icon className={`w-6 h-6 ${stat.iconColor}`} />
@@ -268,8 +268,8 @@ export default function Dashboard() {
             {pieData.map((entry, index) => (
               <div key={entry.name} className="flex items-center gap-3">
                 <div className="w-3 h-3 rounded-full" style={{ backgroundColor: COLORS[index] }} />
-                <span className="text-sm font-medium text-gray-400">{entry.name}</span>
-                <span className="text-sm font-bold text-gray-100 ml-auto">{entry.value}%</span>
+                <span className="text-sm font-medium text-gray-500">{entry.name}</span>
+                <span className="text-sm font-bold text-gray-500 ml-auto">{entry.value}%</span>
               </div>
             ))}
           </div>
